@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -37,13 +38,13 @@
   }
 }
 .navbar{
-  display: flex;
-  border: #282c34;
-  align-items: center;
-  row-gap: 5%;
+  display: grid;
+  justify-content: flex-end;
+  grid-template-columns: 10% 50% 25% 15%;
+  border: 5px solid black;
 }
-.logo{
-  align-items: center;
-  flex-grow: 3;
-  border: #282c34;
+.menu-items{
+  list-style: none;
+  border: 2px solid black;
 }
+
