@@ -38,13 +38,56 @@
   }
 }
 .navbar{
-  display: grid;
-  justify-content: flex-end;
-  grid-template-columns: 10% 50% 25% 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 5px solid black;
 }
 .menu-items{
   list-style: none;
   border: 2px solid black;
+  
 }
-
+.menu-container{
+  position: absolute;
+  top: 22px;
+  left: 0px;
+}
+.hamburger-menu{
+  flex: 1;
+}
+.logo{
+  flex: 4;
+}
+.search-bar{
+  flex: 1;
+}
+.cart{
+  flex: 1;
+}
+.login{
+  flex: 1;
+}
+.signup{
+  flex: 1;
+}
+@media screen and (max-width: 992px) {
+  .hamburger-menu{
+    flex: 1;
+  }
+  .logo{
+    flex: 4;
+  }
+  .search-bar{
+    flex: 1;
+  }
+  .cart{
+    flex: 1;
+  }
+  .login{
+    visibility: collapse;
+  }
+  .signup{
+    visibility: collapse;
+  }
+}
