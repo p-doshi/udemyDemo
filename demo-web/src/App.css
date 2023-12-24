@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -38,12 +39,55 @@
 }
 .navbar{
   display: flex;
-  border: #282c34;
+  justify-content: center;
   align-items: center;
-  row-gap: 5%;
+  border: 5px solid black;
+}
+.menu-items{
+  list-style: none;
+  border: 2px solid black;
+  
+}
+.menu-container{
+  position: absolute;
+  top: 22px;
+  left: 0px;
+}
+.hamburger-menu{
+  flex: 1;
 }
 .logo{
-  align-items: center;
-  flex-grow: 3;
-  border: #282c34;
+  flex: 4;
+}
+.search-bar{
+  flex: 1;
+}
+.cart{
+  flex: 1;
+}
+.login{
+  flex: 1;
+}
+.signup{
+  flex: 1;
+}
+@media screen and (max-width: 992px) {
+  .hamburger-menu{
+    flex: 1;
+  }
+  .logo{
+    flex: 4;
+  }
+  .search-bar{
+    flex: 1;
+  }
+  .cart{
+    flex: 1;
+  }
+  .login{
+    visibility: collapse;
+  }
+  .signup{
+    visibility: collapse;
+  }
 }
