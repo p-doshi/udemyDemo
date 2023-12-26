@@ -32,7 +32,7 @@ app.use(express.json());                          // Parse JSON bodies of reques
 app.use(helmet());                                // Set various HTTP headers for security
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));  // Set cross-origin resource policy
 app.use(morgan("common"));                        // Use morgan for HTTP request logging
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));  // Parse URL-encoded bodies
+app.use(bodyParser.urlencoded({ limit: "300mb", extended: true }));  // Parse URL-encoded bodies
 
 app.use(cors({
     origin: 'http://localhost:3000',              // Allow requests from this origin
@@ -57,7 +57,7 @@ const upload = multer({ storage });
 app.post("/register", upload.single("picture"), registerUser);
 app.post("/instructor/register", upload.single("picture"), registerInstructor);
 
-app.patch("course/:id/videos/create", upload.single("video"), createVideo)
+app.post("course/:id/videos/create", verifyToken, upload.single("video"), createVideo)
 
 app.use(authRoutes);
 app.use(coursesRoutes);
@@ -69,9 +69,6 @@ app.use(videoRoutes);
 
 // Mongoose setup - Connect to MongoDB
 const PORT = process.env.PORT || 6001;  // Use the specified port or default to 6001
-mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
+mongoose.connect(process.env.MONGO_URL).then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));  // Start the server on the specified port
 }).catch((error) => console.log(`${error} did not connect`));  // Log an error message if the connection to MongoDB fails
