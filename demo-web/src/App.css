@@ -46,9 +46,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: lightblue; 
+  background-color: #e9e6e6; 
   z-index: 1000; 
-  border: 5px solid black;
+  border: 2px solid black;
   
 }
 .menu-items{
@@ -69,8 +69,39 @@
   flex: 1;
 }
 
+.outerbox{
+  display: grid;
+  align-items: center;
+}
+.topcourses, .recommendation, .start-teaching{
+  padding: 25px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.topicoption{
+  border: 1px solid black;
+  padding: 25px;
+}
+.mininav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
 
-
+.python:hover, .excel:hover, .webdevelopment:hover, .javascript:hover, 
+.datascience:hover, .amazonaws:hover{
+  color: black;
+  font-weight: bold;
+}
+.bold{
+  font-weight: bold;
+}
+.reviews{
+  background-color: #e9e6e6;
+  padding-left: 100px ;
+}
 * {box-sizing:border-box}
 .slideshow-container{
   max-width: 1000px;
