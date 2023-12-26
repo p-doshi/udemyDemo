@@ -1,10 +1,10 @@
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
-import User from "../models/User.js"
+import Instructor from "../models/Instructor.js"
 
 const saltRounds = 10
 
-export const register = async(req, res) => {
+export const registerInstructor = async(req, res) => {
     try {
         const {
             firstName,
@@ -12,32 +12,38 @@ export const register = async(req, res) => {
             email,
             password,
             picturePath,
+            country,
+            age,
+            educationLevel,
         } = req.body
 
         const salt = await bcrypt.genSalt(saltRounds)
         const passwordHash = await bcrypt.hash(password, salt)
 
-        const newUser = new User({
+        const newInstructor = new Instructor({
             firstName,
             lastName,
             email,
             password: passwordHash,
             picturePath,
+            country,
+            age,
+            educationLevel,
         })
 
-        const savedUser = await newUser.save()
-        res.status(201).json(savedUser)
+        const savedInstructor = await newInstructor.save()
+        res.status(201).json(savedInstructor)
     } catch(err) {
         console.error(err)
         res.status(500).json({message: err.message})
     }
 }
 
-export const login = async(req, res) => {
+export const loginInstructor = async(req, res) => {
     try {
         const {email, password} = req.body
 
-        const user = await User.findOne({email})
+        const user = await Instructor.findOne({email})
         if (!user) {return res.status(400).json({message: "User does not exist"})}
 
         const match = await bcrypt.compare(password, user.password)

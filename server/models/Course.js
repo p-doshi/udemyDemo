@@ -19,14 +19,10 @@ const CourseSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        field: {
+        category: {
             type: String,
             default: "Course",
         },
-        videoLength: {
-            type: Number,
-            default: 0
-        }
     },
     { timestamps: true }
 );

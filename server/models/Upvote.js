@@ -19,7 +19,7 @@ const UpvoteSchema = mongoose.Schema(
     {timestamps: true}
 )
 
-const Upvote = mongoose.model("Review", UpvoteSchema)
+const Upvote = mongoose.model("Upvote", UpvoteSchema)
 export default Upvote
 
 

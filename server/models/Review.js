@@ -6,10 +6,8 @@ const ReviewSchema = mongoose.Schema(
             type: String,
             required: true
         },
-        courseId: {
-            type: String,
-            required: true
-        },
+        courseId: String,
+        instructorId: String,
         description: {
             type: String,
             required: true

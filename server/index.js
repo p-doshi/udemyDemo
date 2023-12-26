@@ -10,8 +10,16 @@ import path from "path";                 // Node.js path module for working with
 import multer from "multer";             // Middleware for handling multipart/form-data, used for file uploads
 import { fileURLToPath } from "url";     // Utility function to convert a file URL to a file path
 import { verifyToken } from "./middleware/auth.js"
-import { register } from "./controllers/auth.js";
+import { registerUser } from "./controllers/authUser.js";
+import { registerInstructor } from "./controllers/authInstructor.js";
+import { createVideo } from "./controllers/videos.js";
 import authRoutes from "./routes/auth.js";
+import coursesRoutes from "./routes/courses.js"
+import instructorRoutes from "./routes/instructors.js"
+import reviewRoutes from "./routes/reviews.js"
+import upvoteRoutes from "./routes/upvotes.js"
+import userRoutes from "./routes/users.js"
+import videoRoutes from "./routes/videos.js"
 
 // Configurations
 const __filename = fileURLToPath(import.meta.url);  // Get the current file name
@@ -46,9 +54,18 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 //Routes with files
-app.post("/auth/register", upload.single("picture"), register);
+app.post("/register", upload.single("picture"), registerUser);
+app.post("/instructor/register", upload.single("picture"), registerInstructor);
 
-app.use("/auth", authRoutes);
+app.patch("course/:id/videos/create", upload.single("video"), createVideo)
+
+app.use(authRoutes);
+app.use(coursesRoutes);
+app.use(instructorRoutes);
+app.use(reviewRoutes);
+app.use(upvoteRoutes);
+app.use(userRoutes);
+app.use(videoRoutes);
 
 // Mongoose setup - Connect to MongoDB
 const PORT = process.env.PORT || 6001;  // Use the specified port or default to 6001
