@@ -1,19 +1,15 @@
-
 import './App.css';
 import React from 'react';
-import Navbar from './components/Navbar';
-import Homepage from './components/Homepage';
+import Navbar from './components/navbar/Navbar';
+import Homepage from './pages/Home/Home';
 
 function App() {
-  
-  return (
-    
-     <div>
-        <Navbar/>
-        <Homepage/>
-     </div>
-    
-  );
+   return (
+      <div>
+         <Navbar/>
+         <Homepage/>
+      </div>
+   );
 }
 
 export default App;

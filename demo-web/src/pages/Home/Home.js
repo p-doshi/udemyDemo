@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import './../App.css';
-import  {Python,Excel,WebDevelopment,JavaScript,DataScience,AmazonAWS} from './Topcourses'
+import './Home.css';
+import  {Python,Excel,WebDevelopment,JavaScript,DataScience,AmazonAWS} from '../TopCourses/TopCourses.js'
 
 const Homepage = () =>{
 
@@ -70,19 +70,19 @@ const Homepage = () =>{
               <div className='slideshow-container'>
                 <div className='mySlides fade'>
                     <div className='numbertext'>1 / 3</div>
-                    <img src='/image1.png' style={{ width: '100%', height: '400px'}}/>
+                    <img src='/assets/image1.png' style={{ width: '100%', height: '400px'}}/>
                     <div className='text'>Caption Text</div>
                 </div>
 
                 <div className='mySlides fade'>
                     <div className='numbertext'>2 / 3</div>
-                    <img src='/image2.png' style={{ width: '100%', height: '400px' }}/>
+                    <img src='/assets/image2.png' style={{ width: '100%', height: '400px' }}/>
                     <div className='text'>Caption Two</div>
                 </div>
 
                 <div className='mySlides fade'>
                     <div className='numbertext'>3 / 3</div>
-                    <img src='/image3.jpg' style={{ width: '100%', height: '400px' }}/>
+                    <img src='/assets/image3.jpg' style={{ width: '100%', height: '400px' }}/>
                     <div className='text'>Caption Three</div>
                 </div>
 

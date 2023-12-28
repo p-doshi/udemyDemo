@@ -37,37 +37,8 @@
     transform: rotate(360deg);
   }
 }
-.navbar{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #e9e6e6; 
-  z-index: 1000; 
-  border: 2px solid black;
-  
-}
-.menu-items{
-  list-style: none;
-  border: 2px solid black;
-  
-}
-.menu-container{
-  position: absolute;
-  top: 22px;
-  left: 0px;
-}
-.logo{
-  flex: 6;
-  text-align: center;
-}
-.hamburger-menu,.search-bar, .cart, .login, .signup{
-  flex: 1;
-}
+
+
 
 .outerbox{
   display: grid;
@@ -175,4 +146,9 @@
   .login, .signup{
     visibility: collapse;
   }
+}
+
+.icon {
+  height: 2rem;
+  width: 2rem;
 }

@@ -1,0 +1,17 @@
+.search-bar {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.search-icon {
+    margin-top: 0.2rem;
+    width: 10%;
+    height: 2.3rem;
+}
+.search-box {
+    border-radius: 50px;
+    font-size: larger;
+    height: 3rem;
+    width: 90%;
+    padding-left: 2rem;
+}

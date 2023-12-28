@@ -1,0 +1,47 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0px 0px 4px 4px rgb(168, 167, 167);
+}
+
+.menu-items {
+    list-style: none;
+    border: 2px solid black;
+}
+
+.menu-container {
+    position: absolute;
+    top: 22px;
+    left: 0px;
+}
+
+.logo {
+    text-align: center;
+    height: 2rem;
+    width: 5rem;
+    margin-left: -2rem;
+}
+
+.categories {
+    margin-left: -2rem;
+}
+
+.search-bar {
+    width: 60%;
+    align-items: center;
+    margin-left: -8rem;
+}
+
+
+.links a{
+    color: black;
+    text-decoration: none;
+}
