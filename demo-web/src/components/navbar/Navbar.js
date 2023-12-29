@@ -1,90 +1,115 @@
 import React, { useState } from 'react'
-import { FaHome, FaShoppingCart, FaSearch } from 'react-icons/fa';
+import { FaHome, FaShoppingCart } from 'react-icons/fa';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdLightMode, MdNightlightRound } from "react-icons/md";
 import SearchBar from 'components/SearchBar/SearchBar';
-import { Button } from '@mui/material';
-import "./Navbar.css"
+import { Button, useTheme, IconButton } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import { setMode } from 'state';
+import {Grid} from '@mui/material';
+import {Hidden} from '@mui/material';
+import { light } from '@mui/material/styles/createPalette';
+
 
 const Navbar= () =>{
 
-    const [menuOpen, setMenu] = useState(false);
-    const toggleMenu = () =>{
-        setMenu(!menuOpen);
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+
+    const theme = useTheme()
+    const neutralLight = theme.palette.neutral.light;
+    const dark = theme.palette.neutral.dark;
+
+    const [hamburger, setHamburger] = useState(false);
+    const toggleHamburger = () =>{
+        setHamburger(!hamburger);
     }
-  
-    const [mode, setMode] = useState('light');
-    const toggleMode = ()=>{
-      if(mode === 'light'){
-        setMode('dark');
-        document.body.style.backgroundColor = 'black';
-        document.body.style.color = 'white';
-      }
-      else{
-        setMode('light');
-        document.body.style.backgroundColor = 'white';
-        document.body.style.color = 'black';
-      }
+
+    const iconStyle = {
+      height: '3rem',
+      width: '3rem',
+      color: dark
     }
+
+    const linkStyle = {
+      color: dark,
+      textDecoration: 'none'
+    }
+
+
 
   return(
-    <div className='navbar'>
-      <div className="hamburger-menu">
-        <div className="hamburger-icon">
-          <RxHamburgerMenu className="icon" onClick={toggleMenu}/>
-        </div>
-      
-        {menuOpen && (
-          <div className='menu-container'>
-            <ul className="menu-items" >
-              <li href="#home">
-                <FaHome /> 
-              </li>
-              <li href="#subject1">Subject 1</li>
-              <li href="#subject2">Subject 2</li>
-      
-            </ul>
-          </div>
-        )}
-      </div>
-      
-      <div>
-        <a href="#home">
-          <img className='logo' src='/assets/udemyLogo.png' alt='logo'/>
-        </a>
-      </div>
+    <>
+      <Grid container alignItems={'center'} backgroundColor={light}>
+        <Hidden mdUp >
+          <Grid item md={1} textAlign={'center'}>        
+            <div>
+              <RxHamburgerMenu onClick={toggleHamburger} color={dark}/>
+            </div>
+          
+            {hamburger && (
+              <div>
+                <ul>
+                  <li>
+                    <FaHome /> 
+                  </li>
+                  <li>Subject 1</li>
+                  <li>Subject 2</li>
+                </ul>
+              </div>
+            )}
+          </Grid>
+        </Hidden>
+        <Grid item lg={1} textAlign={'center'}>
+          <a href="#home" style={linkStyle}>
+            <img src='/assets/udemyLogo.png' alt='logo' height={'100%'} width={'100%'}/>
+          </a>
+        </Grid>
 
-      <div className='categories'>
-        Categories
-      </div>
+        <Grid item lg={1} height={'100%'} width={'100%'} textAlign={'center'} >
+          Categories
+        </Grid>
 
-      <div className="search-bar" >
-        <SearchBar />
-      </div>
-      <div className="darkmode"> 
-        {mode==="light" && (
-          <MdLightMode className='icon' onClick={toggleMode} />
-        )} 
-        {mode==="dark" && (
-          <MdNightlightRound className='icon' onClick={toggleMode} />
-        )}
-      </div>
-      <div className="cart">
-        <a href="#cart">
-          <FaShoppingCart className='icon'/>
-        </a>
-      </div>
-      <Button style={{border: '2px solid #000'}} className="links">
-        <a href="#login">
-          Log In
-        </a>
-      </Button>
-      <Button style={{border: '2px solid #000', backgroundColor: "#000"}} className="links">
-        <a href="#signup">
-          Sign Up
-        </a>
-      </Button>
-    </div>
+        <Grid item lg={6} textAlign={'center'}>
+          <SearchBar />
+        </Grid>
+
+        <Grid item lg={1} textAlign={'center'}>
+          <IconButton onClick={() => dispatch(setMode())}>
+            {
+              theme.palette.mode==="light" ? (
+                <MdLightMode className='icon' color={dark} style={iconStyle}/>
+              ): 
+              (
+                <MdNightlightRound className='icon' color={dark} style={iconStyle}/>
+              )
+            }
+          </IconButton>
+        </Grid>
+        
+        <Grid item lg={1} textAlign={'center'}>
+          <a href="#cart" style={linkStyle}>
+            <FaShoppingCart style={iconStyle}/>
+          </a>
+        </Grid>
+
+        <Grid item lg={1} textAlign={'center'}>
+          <Button style={{border: '2px solid #000', backgroundColor: neutralLight, width: '70%'}}>
+            <a href="#login" style={linkStyle}>
+              Log In
+            </a>
+          </Button>
+        </Grid>
+
+        <Grid item lg={1} textAlign={'center'}>
+          <Button style={{border: '2px solid #000', backgroundColor: dark, width: '70%'}}>
+            <a href="#signup" style={{textDecoration: 'none', color: neutralLight}}>
+              Sign Up
+            </a>
+          </Button>
+        </Grid>
+      </Grid>
+    </>
   );
 };
 
