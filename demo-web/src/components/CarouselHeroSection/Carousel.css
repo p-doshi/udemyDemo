@@ -1,0 +1,48 @@
+.carousel {
+    overflow: hidden;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.inner {
+    white-space: nowrap;
+    transition: transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.carousel-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.indicators {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.indicator-buttons {
+    border: none;
+    cursor: pointer;
+}
+
+.indicators>button {
+    margin: 5px;
+    background: none;
+}
+
+.material-symbols-outlined {
+    height: 3rem;
+    width: 3rem;
+}

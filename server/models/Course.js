@@ -23,6 +23,14 @@ const CourseSchema = new mongoose.Schema(
             type: String,
             default: "Course",
         },
+        price : {
+            type: Number,
+            required: true
+        },
+        thumbNailPath: {
+            type: String,
+            required: true
+        }
     },
     { timestamps: true }
 );

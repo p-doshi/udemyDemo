@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import  {Python,Excel,WebDevelopment,JavaScript,DataScience,AmazonAWS} from '../TopCourses/TopCourses.js'
+import { Carousel } from 'components/CarouselHeroSection/Carousel.js';
 import './Home.css'
 
 const Homepage = () =>{
@@ -22,8 +23,8 @@ const Homepage = () =>{
         
         return(
         <>
-            <div className='outerbox'>
-                
+            <div className='outerbox' >
+                <Carousel />
             
             <div className='topcourses'>
                 <h2>A broad selection of courses</h2>

@@ -20,6 +20,7 @@ import reviewRoutes from "./routes/reviews.js"
 import upvoteRoutes from "./routes/upvotes.js"
 import userRoutes from "./routes/users.js"
 import videoRoutes from "./routes/videos.js"
+import { createCourse } from "./controllers/courses.js";
 
 // Configurations
 const __filename = fileURLToPath(import.meta.url);  // Get the current file name
@@ -57,6 +58,7 @@ const upload = multer({ storage });
 app.post("/register", upload.single("picture"), registerUser);
 app.post("/instructor/register", upload.single("picture"), registerInstructor);
 
+router.post("/course/new", verifyToken, upload.single("picture"), createCourse)
 app.post("course/:id/videos/create", verifyToken, upload.single("video"), createVideo)
 
 app.use(authRoutes);
