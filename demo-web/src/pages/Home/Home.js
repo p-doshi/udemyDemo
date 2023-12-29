@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import  {Python,Excel,WebDevelopment,JavaScript,DataScience,AmazonAWS} from '../TopCourses/TopCourses.js'
 import './Home.css'
+import { CarouselItem, ReviewOne,ReviewTwo, ReviewThree, ReviewFour } from 'pages/Carousel/ReviewsCarousel.js'
+import { Slider } from '@mui/material'
 
 const Homepage = () =>{
     
@@ -19,7 +21,18 @@ const Homepage = () =>{
         const handleHeadingClick = (topic) => {
             setCurrentTopic(topic);
         };
-        
+        const reviews = [<ReviewOne/>,<ReviewTwo/>,<ReviewThree/>,<ReviewFour/>];
+        const settings ={
+          dots: false,
+          slideToShow: 3,
+          infinite: true,
+          slideToScroll: 1,
+          centerMode: true,
+          centerPadding: '0px',
+        }
+        const renderReview =()=>{
+          reviews.map((Review, index) => <CarouselItem key={index} Review={reviews}/>);
+        }
         return(
         <>
             <div className='outerbox'>
@@ -56,6 +69,9 @@ const Homepage = () =>{
             <br/>
             <div className='reviews'>
                 <h2>How learners like you are achieving their goals</h2>
+                <Slider {...settings}>
+                  {renderReview}
+                </Slider>
             </div>
             <br/>
             <div className='recommendation'>
