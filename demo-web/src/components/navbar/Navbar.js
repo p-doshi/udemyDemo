@@ -42,7 +42,7 @@ const Navbar= () =>{
     <>
       <Grid container alignItems={'center'} backgroundColor={light}>
         <Hidden mdUp >
-          <Grid item md={1} textAlign={'center'}>        
+          <Grid item sm={0.5} textAlign={'center'}>        
             <div>
               <RxHamburgerMenu onClick={toggleHamburger} color={dark}/>
             </div>
@@ -60,21 +60,21 @@ const Navbar= () =>{
             )}
           </Grid>
         </Hidden>
-        <Grid item lg={1} textAlign={'center'}>
+        <Grid item sm={1} lg={1} textAlign={'center'}>
           <a href="#home" style={linkStyle}>
             <img src='/assets/udemyLogo.png' alt='logo' height={'100%'} width={'100%'}/>
           </a>
         </Grid>
 
-        <Grid item lg={1} height={'100%'} width={'100%'} textAlign={'center'} >
+        <Grid item sm={1} lg={1} height={'100%'} width={'100%'} textAlign={'center'} >
           Categories
         </Grid>
 
-        <Grid item lg={6} textAlign={'center'}>
+        <Grid item sm={5} lg={6} textAlign={'center'}>
           <SearchBar />
         </Grid>
 
-        <Grid item lg={1} textAlign={'center'}>
+        <Grid item sm={1} lg={1} textAlign={'center'}>
           <IconButton onClick={() => dispatch(setMode())}>
             {
               theme.palette.mode==="light" ? (
@@ -87,13 +87,13 @@ const Navbar= () =>{
           </IconButton>
         </Grid>
         
-        <Grid item lg={1} textAlign={'center'}>
+        <Grid item sm={1} lg={1} textAlign={'center'}>
           <a href="#cart" style={linkStyle}>
             <FaShoppingCart style={iconStyle}/>
           </a>
         </Grid>
 
-        <Grid item lg={1} textAlign={'center'}>
+        <Grid item sm={1} lg={1} textAlign={'center'}>
           <Button style={{border: '2px solid #000', backgroundColor: neutralLight, width: '70%'}}>
             <a href="#login" style={linkStyle}>
               Log In
@@ -101,7 +101,7 @@ const Navbar= () =>{
           </Button>
         </Grid>
 
-        <Grid item lg={1} textAlign={'center'}>
+        <Grid item sm={1} lg={1} textAlign={'center'}>
           <Button style={{border: '2px solid #000', backgroundColor: dark, width: '70%'}}>
             <a href="#signup" style={{textDecoration: 'none', color: neutralLight}}>
               Sign Up
