@@ -36,6 +36,8 @@ export const createCourse = async(req, res) => {
             title,
             description,
             category,
+            price,
+            thumbNailPath
         } = req.body;
 
         const newCourse = new Course({
@@ -43,6 +45,8 @@ export const createCourse = async(req, res) => {
             title,
             description,
             category,
+            price,
+            thumbNailPath
         })
 
         const course = await newCourse.save()
