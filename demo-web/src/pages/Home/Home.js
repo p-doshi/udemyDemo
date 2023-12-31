@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import  {Python,Excel,WebDevelopment,JavaScript,DataScience,AmazonAWS} from '../TopCourses/TopCourses.js'
 import { Carousel } from 'components/CarouselHeroSection/Carousel.js';
 import './Home.css'
-import { CarouselItem, ReviewOne,ReviewTwo, ReviewThree, ReviewFour } from 'pages/Carousel/ReviewsCarousel.js'
-import { Slider } from '@mui/material'
+import ReviewCarousel, { ReviewOne, ReviewTwo, ReviewThree, ReviewFour } from 'pages/Carousel/ReviewsCarousel.js';
+
 
 const Homepage = () =>{
     
@@ -22,18 +22,13 @@ const Homepage = () =>{
         const handleHeadingClick = (topic) => {
             setCurrentTopic(topic);
         };
-        const reviews = [<ReviewOne/>,<ReviewTwo/>,<ReviewThree/>,<ReviewFour/>];
-        const settings ={
-          dots: false,
-          slideToShow: 3,
-          infinite: true,
-          slideToScroll: 1,
-          centerMode: true,
-          centerPadding: '0px',
-        }
-        const renderReview =()=>{
-          reviews.map((Review, index) => <CarouselItem key={index} Review={reviews}/>);
-        }
+        const reviews = [
+          <ReviewOne />,
+          <ReviewTwo />,
+          <ReviewThree />,
+          <ReviewFour />,
+        ];
+       
         return(
         <>
             <div className='outerbox' >
@@ -70,9 +65,9 @@ const Homepage = () =>{
             <br/>
             <div className='reviews'>
                 <h2>How learners like you are achieving their goals</h2>
-                <Slider {...settings}>
-                  {renderReview}
-                </Slider>
+                <div>
+                <ReviewCarousel reviews={reviews} />
+                </div>
             </div>
             <br/>
             <div className='recommendation'>
