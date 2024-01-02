@@ -2,7 +2,7 @@
     display: grid;
     align-items: center;
 }
-
+.maincarousel,
 .topcourses,
 .recommendation,
 .start-teaching {
@@ -42,5 +42,27 @@
     background-color: #e9e6e6;
     padding-left: 100px;
 }
-
-
+.recommendoptions{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(2,75%);
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.popout{
+    padding: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-content: center;
+    border: 1px solid black;
+    transition: transform(0.2);
+    background-color: #e9e6e6;
+    color: black;
+    
+}
+.popout:hover{
+    color: black;
+    font-weight: bold;
+    transform: scale(1.2);
+}

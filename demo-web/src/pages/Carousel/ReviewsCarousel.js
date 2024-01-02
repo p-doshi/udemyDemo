@@ -1,11 +1,9 @@
-
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import CarouselItemTwo from './CarouselItemTwo';
-
-
+import './ReviewsCarousel.css'
 
 const ReviewCarousel = ({ reviews }) => {
   const settings = {
@@ -15,21 +13,19 @@ const ReviewCarousel = ({ reviews }) => {
     slidesToScroll: 1,
   };
 
- 
-
   return (
     <div className="reviews">
-      <h2>How learners like you are achieving their goals</h2>
       <Slider {...settings}>
         {reviews.map((ReviewComponent, index) => (
           <div key={index}>
-            <CarouselItemTwo Review={<ReviewComponent/>} />
+            <CarouselItemTwo ReviewComponent={ReviewComponent} />
           </div>
         ))}
       </Slider>
     </div>
   );
 };
+
 export default ReviewCarousel;
 
 const widthStyle = {

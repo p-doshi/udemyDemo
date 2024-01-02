@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const CarouselItemTwo = ({ Review }) => {
-  const ReviewComponent = Review; // Instantiate the component
+const CarouselItemTwo = ({ ReviewComponent }) => {
   return <ReviewComponent />;
 };
 
