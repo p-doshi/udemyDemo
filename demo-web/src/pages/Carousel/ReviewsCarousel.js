@@ -1,7 +1,7 @@
 import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import CarouselItemTwo from './CarouselItemTwo';
 import './ReviewsCarousel.css'
 
@@ -25,8 +25,6 @@ const ReviewCarousel = ({ reviews }) => {
     </div>
   );
 };
-
-export default ReviewCarousel;
 
 const widthStyle = {
     width: '80%',
@@ -91,3 +89,4 @@ export const ReviewFour = () =>{
     );
 };
 
+export default ReviewCarousel;

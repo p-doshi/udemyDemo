@@ -69,7 +69,7 @@ const Homepage = () =>{
             <br/>
             <div className='reviews'>
               <h2>How learners like you are achieving their goals</h2>
-              
+              <ReviewCarousel reviews={[ReviewOne, ReviewTwo, ReviewThree, ReviewFour]}/>
             </div>
             <br/>
             <div className='recommendation'>

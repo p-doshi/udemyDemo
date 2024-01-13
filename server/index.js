@@ -58,7 +58,7 @@ const upload = multer({ storage });
 app.post("/register", upload.single("picture"), registerUser);
 app.post("/instructor/register", upload.single("picture"), registerInstructor);
 
-router.post("/course/new", verifyToken, upload.single("picture"), createCourse)
+app.post("/course/new", verifyToken, upload.single("picture"), createCourse)
 app.post("course/:id/videos/create", verifyToken, upload.single("video"), createVideo)
 
 app.use(authRoutes);
