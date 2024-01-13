@@ -2,10 +2,9 @@
     display: grid;
     align-items: center;
 }
-.maincarousel,
+
 .topcourses,
-.recommendation,
-.start-teaching {
+.recommendation{
     padding: 25px;
     margin-left: 10%;
     margin-right: 10%;
@@ -38,7 +37,7 @@
     font-weight: bold;
 }
 
-.reviews {
+.reviews,.maincarousel,.start-teaching {
     background-color: #e9e6e6;
     padding-left: 100px;
 }
@@ -65,4 +64,9 @@
     color: black;
     font-weight: bold;
     transform: scale(1.2);
+}
+.footertable{
+    border-collapse: separate;
+    border-spacing: 15px 15px;
+    width: 100%;
 }

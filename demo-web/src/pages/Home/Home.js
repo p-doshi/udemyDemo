@@ -25,13 +25,19 @@ const Homepage = () =>{
         const handleHeadingClick = (topic) => {
             setCurrentTopic(topic);
         };
-
+        
+         
         const reviews = [ReviewOne, ReviewTwo, ReviewThree, ReviewFour];
         const user = useSelector((state) => state.user);
 
         const theme = useTheme()
         const neutralLight = theme.palette.neutral.light;
         const dark = theme.palette.neutral.dark;
+        const linkStyle = {
+          color: dark,
+          textDecoration: 'none',
+          margin: '0px 0px 0px 20px'
+        }  
         return(
         <>
             <div className='outerbox' >
@@ -84,23 +90,53 @@ const Homepage = () =>{
                 <div className='popout'><a href=''>Photography</a></div>
                 <div className='popout'><a href=''>Music</a></div>
               </div>
-
+              <br/><br/>
             </div>
-            <br/>
+            <br/><br/>
             <div className='start-teaching'>
                 <h2>Become an instructor</h2>
-                <h4>Instructors from around the world teach millions 
+                <p>Instructors from around the world teach millions 
                   of learners on Udemy. We provide the tools and skills 
-                  to teach what you love. </h4>
-                  <Button style={{border: '2px solid #000', backgroundColor: dark, width: '70%'}}>
+                  to teach what you love. </p>
+                  <Button style={{border: '2px solid #000', backgroundColor: dark, width: '20%'}}>
                     <a href="#teachtoday" style={{textDecoration: 'none', color: neutralLight}}>
-                      Start teaching today
+                      <b>Start teaching today</b>
                     </a>
                   </Button>
+                  <br/><br/>
             </div>
             <br/>
-            <div className='footer'>
-
+            <div className='footer' style={{backgroundColor:dark}}>
+                <table className='footertable'>
+                  <td>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Udemy Business</a></tr>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Teach on Udemy</a></tr>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Get the app</a></tr>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>About Us</a></tr>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Contact us</a></tr>
+                  </td>
+                  <td>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Careers</a></tr>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Blog</a></tr>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Help and Support</a></tr>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Affiliate</a></tr>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Investors</a></tr>
+                  </td>
+                  <td>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Terms</a></tr>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Privacy Policy</a></tr>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Cookie settings</a></tr>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Sitemap</a></tr>
+                    <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Accessibility statement</a></tr>
+                  </td>
+                  <td>
+                    <tr aria-colspan={5}><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Language</a></tr>
+                  </td>
+                </table>
+                <br/>
+                <a href="#home" style={linkStyle}>
+                  <img src='/assets/udemyLogo.png' alt='logo' height={'10%'} width={'10%'}/>
+                </a>
             </div>
         </div>
     </>
