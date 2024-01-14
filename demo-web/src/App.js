@@ -6,6 +6,8 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
+import Login from 'pages/Login/Login';
+import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -14,13 +16,19 @@ function App() {
    const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
 
    return (
-      <div>
+     <div>
+       <BrowserRouter>
          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <Navbar/>
-            <Homepage/>
+           <CssBaseline />
+           <Navbar />
+           <Routes>
+             <Route path="/" element={<Login />} />
+
+             {/* <Homepage/> */}
+           </Routes>
          </ThemeProvider>
-      </div>
+       </BrowserRouter>
+     </div>
    );
 }
 
