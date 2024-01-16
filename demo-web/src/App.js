@@ -6,7 +6,8 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
-
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import TeachPage from 'pages/TeachWithUs';
 
 function App() {
 
@@ -17,8 +18,14 @@ function App() {
       <div>
          <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Navbar/>
-            <Homepage/>
+            <Router>
+               <Navbar/>
+               <Routes>
+                  <Route path="/pages/Home/Home" element={<Homepage/>}/>
+                  <Route path="pages/TeachWithUs" element={<TeachPage/>}/>
+                  <Route index element={<Homepage/>}/>
+               </Routes>
+            </Router>
          </ThemeProvider>
       </div>
    );

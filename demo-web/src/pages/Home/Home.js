@@ -2,11 +2,8 @@ import React, { useState } from 'react'
 import  {Python,Excel,WebDevelopment,JavaScript,DataScience,AmazonAWS} from '../TopCourses/TopCourses.js'
 import { Carousel } from 'components/CarouselHeroSection/Carousel.js';
 import './Home.css'
-import ReviewCarousel,{ ReviewOne, ReviewTwo, ReviewThree, ReviewFour } from 'pages/Carousel/ReviewsCarousel.js';
-import { Button, useTheme, IconButton } from '@mui/material';
-import { useDispatch, useSelector } from 'react-redux'
-import { setMode } from 'state';
-import { light } from '@mui/material/styles/createPalette';
+import ReviewCarousel from 'pages/Carousel/ReviewsCarousel.js';
+import { Button, useTheme} from '@mui/material';
 
 const Homepage = () =>{
     
@@ -25,10 +22,6 @@ const Homepage = () =>{
         const handleHeadingClick = (topic) => {
             setCurrentTopic(topic);
         };
-        
-         
-        const reviews = [ReviewOne, ReviewTwo, ReviewThree, ReviewFour];
-        const user = useSelector((state) => state.user);
 
         const theme = useTheme()
         const neutralLight = theme.palette.neutral.light;
@@ -38,6 +31,7 @@ const Homepage = () =>{
           textDecoration: 'none',
           margin: '0px 0px 0px 20px'
         }  
+
         return(
         <>
             <div className='outerbox' >
@@ -74,8 +68,10 @@ const Homepage = () =>{
             </div>
             <br/>
             <div className='reviews'>
-              <h2>How learners like you are achieving their goals</h2>
               
+              <h2>How learners like you are achieving their goals</h2>
+              <ReviewCarousel/>
+              <br/>
             </div>
             <br/>
             <div className='recommendation'>
@@ -99,7 +95,7 @@ const Homepage = () =>{
                   of learners on Udemy. We provide the tools and skills 
                   to teach what you love. </p>
                   <Button style={{border: '2px solid #000', backgroundColor: dark, width: '20%'}}>
-                    <a href="#teachtoday" style={{textDecoration: 'none', color: neutralLight}}>
+                    <a href="./../TeachWithUs" style={{textDecoration: 'none', color: neutralLight}}>
                       <b>Start teaching today</b>
                     </a>
                   </Button>
@@ -130,7 +126,7 @@ const Homepage = () =>{
                     <tr><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Accessibility statement</a></tr>
                   </td>
                   <td>
-                    <tr aria-colspan={5}><a href='#' style={{textDecoration: 'none', color: neutralLight}}>Language</a></tr>
+                    <tr aria-colspan={5} className='languages' style={{color:neutralLight}}>Language</tr>
                   </td>
                 </table>
                 <br/>

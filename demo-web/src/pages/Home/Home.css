@@ -39,7 +39,8 @@
 
 .reviews,.maincarousel,.start-teaching {
     background-color: #e9e6e6;
-    padding-left: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 .recommendoptions{
     display: grid;
