@@ -1,6 +1,13 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+=======
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import CarouselItemTwo from './CarouselItemTwo';
+>>>>>>> 9a8602481244a0a8f4a208e50e865184a0de430c
 import './ReviewsCarousel.css'
 
 const widthStyle = {
@@ -24,9 +31,31 @@ const ReviewCarousel = () => {
   };
 
   return (
+<<<<<<< HEAD
     
       <Carousel {...settings}>
         <div className='review'>
+=======
+    <div className="reviews">
+      <Slider {...settings}>
+        {reviews.map((ReviewComponent, index) => (
+          <div key={index}>
+            <CarouselItemTwo ReviewComponent={ReviewComponent} />
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
+};
+
+const widthStyle = {
+    width: '80%',
+    margin: '0 auto',
+}
+export const ReviewOne = () =>{
+    return(
+        <div>
+>>>>>>> 9a8602481244a0a8f4a208e50e865184a0de430c
             <p>
             I am proud to say that after a few months of taking 
             this course...<b>I passed my exam and am now an AWS Certified

@@ -7,28 +7,18 @@ const saltRounds = 10
 export const registerUser = async(req, res) => {
     try {
         const {
-            firstName,
-            lastName,
+            fullName,
             email,
             password,
-            picturePath,
-            country,
-            age,
-            schoolLevel,
         } = req.body
 
         const salt = await bcrypt.genSalt(saltRounds)
         const passwordHash = await bcrypt.hash(password, salt)
 
         const newUser = new User({
-            firstName,
-            lastName,
+            fullName,
             email,
             password: passwordHash,
-            picturePath,
-            country,
-            age,
-            schoolLevel,
         })
 
         const savedUser = await newUser.save()
