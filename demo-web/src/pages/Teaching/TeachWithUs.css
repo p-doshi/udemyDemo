@@ -1,0 +1,44 @@
+.teachcontainer{
+    display: grid;
+    row-gap: 3%;
+}
+.imagecontainer{
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+.imagecontainer > img{
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+.text{
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-150%, -150%);
+    height: 100px;
+    width: 200px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+.startreason, .stats{
+    display: flex;
+    padding: 0 10% 0 10%;
+    justify-content: space-around;
+}
+.reasonsbox, .reasons, .allstats{
+    text-align: center;
+}
+.stats{
+    background-color: blueviolet;
+    color: white;
+}
+@media (max-width:800px) {
+.text{
+    transform: translate(-40%, -150%);
+    height: 100px;
+    width: 200px;
+}
+}

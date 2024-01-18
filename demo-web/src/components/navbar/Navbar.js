@@ -9,6 +9,8 @@ import { setMode } from 'state';
 import {Grid} from '@mui/material';
 import {Hidden} from '@mui/material';
 import { light } from '@mui/material/styles/createPalette';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 
 const Navbar= () =>{
@@ -61,13 +63,20 @@ const Navbar= () =>{
           </Grid>
         </Hidden>
         <Grid item sm={1} lg={1} textAlign={'center'}>
-          <a href="#home" style={linkStyle}>
+          <Link to="./pages/Home/Home" style={linkStyle}>
             <img src='/assets/udemyLogo.png' alt='logo' height={'100%'} width={'100%'}/>
-          </a>
+          </Link>
         </Grid>
-
+        
         <Grid item sm={1} lg={1} height={'100%'} width={'100%'} textAlign={'center'} >
-          Categories
+          <div className='categories'>
+            <button className='dropbtn'>Categories</button>
+            <div className='categories-content'>
+              <Link to="#">Link 1</Link>
+              <Link to="#">Link 2</Link>
+              <Link to="#">Link 3</Link>
+            </div>
+          </div>
         </Grid>
 
         <Grid item sm={5} lg={6} textAlign={'center'}>

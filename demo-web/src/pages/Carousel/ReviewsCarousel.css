@@ -1,9 +1,8 @@
 .review {
   border: 1px solid black;
   margin-left: 10px;
-  margin-right: 10px;
   padding: 8px;
   background-color: white;
-  height: 300px;
-  width: 200px;
+  height: 220px;
+  width: 95%;
 }

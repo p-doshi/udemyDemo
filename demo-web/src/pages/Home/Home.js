@@ -4,6 +4,7 @@ import { Carousel } from 'components/CarouselHeroSection/Carousel.js';
 import './Home.css'
 import ReviewCarousel from 'pages/Carousel/ReviewsCarousel.js';
 import { Button, useTheme} from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Homepage = () =>{
     
@@ -68,15 +69,10 @@ const Homepage = () =>{
             </div>
             <br/>
             <div className='reviews'>
-<<<<<<< HEAD
               
               <h2>How learners like you are achieving their goals</h2>
               <ReviewCarousel/>
               <br/>
-=======
-              <h2>How learners like you are achieving their goals</h2>
-              <ReviewCarousel reviews={[ReviewOne, ReviewTwo, ReviewThree, ReviewFour]}/>
->>>>>>> 9a8602481244a0a8f4a208e50e865184a0de430c
             </div>
             <br/>
             <div className='recommendation'>
@@ -100,9 +96,9 @@ const Homepage = () =>{
                   of learners on Udemy. We provide the tools and skills 
                   to teach what you love. </p>
                   <Button style={{border: '2px solid #000', backgroundColor: dark, width: '20%'}}>
-                    <a href="./../TeachWithUs" style={{textDecoration: 'none', color: neutralLight}}>
+                    <Link to="/pages/Teaching/TeachWithUs" style={{textDecoration: 'none', color: neutralLight}}>
                       <b>Start teaching today</b>
-                    </a>
+                    </Link>
                   </Button>
                   <br/><br/>
             </div>
